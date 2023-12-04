@@ -2,12 +2,12 @@
 
 https://mqtt-explorer.com/
 
-### MQTT Explorer "Username" String
+### MQTT Explorer "Username" string
 ```
 <Your-IoT-Hub-Name>.azure-devices.net/<Your-Device-ID/Name>/?api-version=2021-04-12
 ```
 
-### Azure CLI Command to get COnnection String
+### Azure CLI Command to get Connection String
 ```
 az iot hub generate-sas-token -n <Your-IoT-Hub-Name> -d <Your-Device-ID> --du <Your-Validity-Duration-In-Seconds>
 ```
