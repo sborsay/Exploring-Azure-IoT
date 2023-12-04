@@ -14,7 +14,7 @@ az iot hub generate-sas-token -n <Your-IoT-Hub-Name> -d <Your-Device-ID> --du <Y
 
 ### recognized external device topic
 
-devices/<Your-Device-ID>/messages/events/
+devices/{Your-Device-ID}/messages/events/
 
 ### Our device payload example
 
