@@ -2,7 +2,7 @@
 
 https://softblade.de/en/mqtt-fx/
 
-### Free version of MQTTfx 1.71 (Archieved)
+### Free version of MQTTfx 1.71 used in lecture 
 
 https://web.archive.org/web/20210514230412/https://www.jensd.de/apps/mqttfx/1.7.1
 
