@@ -19,5 +19,5 @@ devices/<Your-Device-ID>/messages/events/
 
 ### Our device payload example
 ```
-{"temperature":73,"humidity":88, "timestamp":123456789}
+{"temperature":73, "humidity":88, "timestamp":123456789}
 ```
