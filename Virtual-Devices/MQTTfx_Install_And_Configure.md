@@ -1,4 +1,6 @@
-### paid mqttfx tool
+### Paid Full Featured tool
+
+https://softblade.de/en/mqtt-fx/
 
 ### Free version of MQTTfx 1.71 (Archieved)
 
@@ -16,7 +18,7 @@ https://weblogs.asp.net/morteza/how-to-send-mqtt-messages-to-an-azure-iothub-by-
 
 ---
 
-###MQTTfx Configuration
+### MQTTfx Configuration
 
 Broker address on MQTTfx is host name on Azure IoT hub:
 ```
