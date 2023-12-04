@@ -12,7 +12,7 @@ https://github.com/SeppPenner/mqttfx171-backup
 
 ---
 
-### Article link -  "How to send MQTT messages to an Azure IotHub by MQTT.fx client"
+### Article link -  "How to send MQTT messages to an Azure IoT Hub by MQTT.fx client"
 
 https://weblogs.asp.net/morteza/how-to-send-mqtt-messages-to-an-azure-iothub-by-mqttfx-client
 
