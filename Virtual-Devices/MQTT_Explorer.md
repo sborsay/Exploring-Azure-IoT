@@ -1,17 +1,21 @@
-mqtt exploere
+### MQTT Explorer Download
 
-@1:24 hub strig with API Name
+https://mqtt-explorer.com/
 
+### "Username" String
+```
 <Your-IoT-Hub-Name>.azure-devices.net/<Your-Device-ID/Name>/?api-version=2021-04-12
+```
 
-cli command to get SAS token
-
+### Azure CLI Command to get COnnection String
+```
 az iot hub generate-sas-token -n <Your-IoT-Hub-Name> -d <Your-Device-ID> --du <Your-Validity-Duration-In-Seconds>
+```
 
-recognized external device topic:
+### recognized external device topic
 
 devices/<Your-Device-ID>/messages/events/
 
-our device payload:
+### Our device payload example
 
 {"temperature":73,"humidity":88, "timestamp":123456789}
