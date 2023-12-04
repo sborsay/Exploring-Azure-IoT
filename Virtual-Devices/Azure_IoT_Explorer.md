@@ -1,6 +1,6 @@
 ###  Install Azure IoT Explorer
 
-([https://github.com/Azure/azure-iot-explorer/releases])
+[https://github.com/Azure/azure-iot-explorer/releases]
 
 
 2. command to get conection string from azure cli
