@@ -1,4 +1,4 @@
-#https://github.com/Prabhashi-97/Azure-IoT-with-Raspberry-Pi/blob/main/raspberryprogram.py
+#Modified from:  https://github.com/Prabhashi-97/Azure-IoT-with-Raspberry-Pi/blob/main/raspberryprogram.py
 
 import random  
 #import Adafruit_DHT
