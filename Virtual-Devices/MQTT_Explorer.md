@@ -2,7 +2,7 @@
 
 https://mqtt-explorer.com/
 
-### "Username" String
+### MQTT Explorer "Username" String
 ```
 <Your-IoT-Hub-Name>.azure-devices.net/<Your-Device-ID/Name>/?api-version=2021-04-12
 ```
