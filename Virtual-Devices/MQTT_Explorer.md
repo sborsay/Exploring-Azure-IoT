@@ -7,7 +7,7 @@ https://mqtt-explorer.com/
 <Your-IoT-Hub-Name>.azure-devices.net/<Your-Device-ID/Name>/?api-version=2021-04-12
 ```
 
-### Azure CLI Command to get Connection String
+### Azure CLI Command to get SAS Token
 ```
 az iot hub generate-sas-token -n <Your-IoT-Hub-Name> -d <Your-Device-ID> --du <Your-Validity-Duration-In-Seconds>
 ```
