@@ -12,10 +12,12 @@ https://mqtt-explorer.com/
 az iot hub generate-sas-token -n <Your-IoT-Hub-Name> -d <Your-Device-ID> --du <Your-Validity-Duration-In-Seconds>
 ```
 
-### recognized external device topic
-
-devices/{Your-Device-ID}/messages/events/
+### Recognized external device topic
+```
+devices/<Your-Device-ID>/messages/events/
+```
 
 ### Our device payload example
-
+```
 {"temperature":73,"humidity":88, "timestamp":123456789}
+```
