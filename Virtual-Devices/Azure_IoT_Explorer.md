@@ -1,8 +1,3 @@
-###  Install Azure IoT Explorer
-
-https://github.com/Azure/azure-iot-explorer/releases
-
-
 ### Command to get conection string from azure cli
 ```
 az iot hub device-identity connection-string show --hub-name <Your-IoT-Hub> -d <Your-Device>
