@@ -25,7 +25,7 @@ Or, with some other samples from the SDK you will need to use use
 npm install azure-iot-device azure-iot-device-amqp --save
 ```
 
-### To monitor hub device
+### To monitor your IoT hub device
 
 ```
 az iot hub monitor-events --hub-name <Your-IoT-Hub-Name> -d <Your-Device-ID>
