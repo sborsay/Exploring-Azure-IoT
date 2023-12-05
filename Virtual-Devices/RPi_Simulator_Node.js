@@ -33,7 +33,7 @@ setInterval(function(){
   var message = new Message(JSON.stringify({
     temperature: Math.round(20 + (Math.random() * 15 * 100)/100),
     humidity:    Math.round(60 + (Math.random() * 20 * 100)/100),
-	  timestamp:   Math.floor(Date.now() / 1000)
+    timestamp:   Math.floor(Date.now() / 1000)
   }));
 
   // Add a custom application property to the message.
