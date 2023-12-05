@@ -1,8 +1,5 @@
 // Copyright (c) Microsoft. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
-//results of run in PS:
-//Sending message: {"temperature":27.7061415030516,"humidity":74.27350938232783} message sent
-//
 
 'use strict';
 
@@ -16,11 +13,11 @@
 // https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-security
 //
 // Using the Azure CLI:
-// az iot hub device-identity show-connection-string --hub-name {YourIoTHubName} --device-id MyNodeDevice --output table
+// az iot hub device-identity show-connection-string --hub-name {YourIoTHubName} --device-id <Your-Device-ID>
 var connectionString = <Insert-Your-Connection-String-Here>;
 
 // Using the Node.js Device SDK for IoT Hub:
-//   https://github.com/Azure/azure-iot-sdk-node
+// https://github.com/Azure/azure-iot-sdk-node
 // The sample connects to a device-specific MQTT endpoint on your IoT Hub.
 var Mqtt = require('azure-iot-device-mqtt').Mqtt;
 var DeviceClient = require('azure-iot-device').Client
@@ -35,7 +32,7 @@ setInterval(function(){
   var message = new Message(JSON.stringify({
     temperature: Math.round(20 + (Math.random() * 15 * 100)/100),
     humidity:    Math.round(60 + (Math.random() * 20 * 100)/100),
-	timestamp:   Math.floor(Date.now() / 1000)
+    timestamp:   Math.floor(Date.now() / 1000)
   }));
 
   // Add a custom application property to the message.
