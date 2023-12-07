@@ -61,7 +61,7 @@ MODULE_ID = "ModuleId"
 GATEWAY_HOST_NAME = "GatewayHostName"
 
 ## Parse the connection string into constituent parts
-dict_keys = parse_connection("HostName=iothubsdb1.azure-devices.net;DeviceId=testdevice;SharedAccessKey=Sg2kG5as7ZRU1u4lHRqL1/dX1ntLKdP8JPxirWwOzr4=")
+dict_keys = parse_connection("<Insert-Your-Connection-String-Here>")
 shared_access_key = dict_keys.get(SHARED_ACCESS_KEY)
 shared_access_key_name =  dict_keys.get(SHARED_ACCESS_KEY_NAME)
 gateway_hostname = dict_keys.get(GATEWAY_HOST_NAME)
@@ -71,7 +71,7 @@ module_id = dict_keys.get(MODULE_ID)
 
 ## Create you own shared access signature from the connection string that you have
 ## Azure IoT Explorer can be used for this purpose.
-sas_token_str = "SharedAccessSignature sr=iothubsdb1.azure-devices.net%2Fdevices%2Ftestdevice&sig=uArhca1yoXlgsPeocAlr6KRPwMlT%2F81jh5O9c%2FsoACg%3D&se=1702075226"
+sas_token_str = "<Insert-Your-SAS-String-Here>"
 
 ## Create username following the below format '<HOSTNAME>/<DEVICE_ID>'
 username = hostname + '/' + device_id
