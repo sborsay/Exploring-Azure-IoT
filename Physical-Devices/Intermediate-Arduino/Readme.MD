@@ -10,7 +10,7 @@ https://github.com/Azure/azure-sdk-for-c/tree/1ff8f33203d0635345a8e9b6717845b592
 
 ### Get connection string
 ```
-jjh
+az iot hub device-identity connection-string show -n <Your-IoT-Hub-Name> -d <Your-Device-ID>
 ```
 
 ```
