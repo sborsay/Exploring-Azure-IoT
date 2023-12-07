@@ -2,13 +2,13 @@
 // SPDX-License-Identifier: MIT
 
 // Wifi
-#define IOT_CONFIG_WIFI_SSID "SSID"
-#define IOT_CONFIG_WIFI_PASSWORD "PWD"
+#define IOT_CONFIG_WIFI_SSID "<Your-SSID>"
+#define IOT_CONFIG_WIFI_PASSWORD "<Your-Password>"
 
 // Azure IoT
-#define IOT_CONFIG_IOTHUB_FQDN "[your Azure IoT host name].azure-devices.net"
-#define IOT_CONFIG_DEVICE_ID "Device ID"
-#define IOT_CONFIG_DEVICE_KEY "Device Key"
+#define IOT_CONFIG_IOTHUB_FQDN "<Your-IoT-Hub-Name>.azure-devices.net"
+#define IOT_CONFIG_DEVICE_ID "<Your-Device-ID>"
+#define IOT_CONFIG_DEVICE_KEY "<Your-Primary-Key>"
 
 // Publish 1 message every 2 seconds
-#define TELEMETRY_FREQUENCY_MILLISECS 2000
+#define TELEMETRY_FREQUENCY_MILLISECS 4000
