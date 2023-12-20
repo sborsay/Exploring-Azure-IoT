@@ -19,7 +19,7 @@ for (( i = 1; i <= $iterations; i++)) {
     TEMP=$(($TEMP*6))
   fi
 
-  echo "Publishing message $i/$ITERATIONS to IoT topic $mqtttopic:"
+  echo "Publishing message to Azure IoT Hub via the Azure CLI:"
   echo "temperature: $TEMP"
   echo "humidity: $HUMIDITY"
   echo "timestamp: $CURRENT_TS"
