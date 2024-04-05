@@ -29,7 +29,7 @@
 
     window.onload = function () {
       var x = new XMLHttpRequest();
-      x.open("GET", "https://iotmessagestorage1.blob.core.windows.net/storage4iotmessages1/iothubsdb1/01/2022/12/29/01/04.json", true);
+      x.open("GET", "<Place-Your-Blob-Storage-Endpoint-Here>", true);  //Your endpoint should end in ".json"
       x.onreadystatechange = function () {
         if (x.readyState == 4 && x.status == 200) {
             console.log('x.responseText', x.responseText)
