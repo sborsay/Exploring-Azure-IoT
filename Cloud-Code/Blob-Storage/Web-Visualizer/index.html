@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+</head>
+
+<body>
+  <div class="container">
+    <h1>Dashboard</h1>
+    <div class="panel panel-info">
+      <div class="panel-heading">
+        <h3 class="panel-title"><strong>New Chart</strong></h3>
+      </div>
+      <div class="panel-body">
+        <div id="container"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script>
+
+    window.onload = function () {
+      var x = new XMLHttpRequest();
+      x.open("GET", "https://iotmessagestorage1.blob.core.windows.net/storage4iotmessages1/iothubsdb1/01/2022/12/29/01/04.json", true);
+      x.onreadystatechange = function () {
+        if (x.readyState == 4 && x.status == 200) {
+            console.log('x.responseText', x.responseText)
+            let resData = x.responseText.split('\n').map( x => JSON.parse(x)).map(x => x.Body || {} );
+            console.log("secondRes",resData)
+
+           let resData2 =[];
+      
+           let i = 0;
+
+             while (i < resData.length) {
+             resData2.push(JSON.parse(atob(resData[i])))
+             console.log('actualll', resData2)
+             i++;
+             }
+          
+           console.log('Array after push : ' + resData2);
+
+          let graphData = {
+            'newChart': { hum: [], temp: [], humtime: [], temptime: [] }
+          };
+          try {
+            console.log('graphData', graphData);
+            const graphDataChartData = graphData['newChart'];
+            const xAxisData = graphDataChartData['temptime'];
+            const inhumidArr = graphDataChartData['hum'];
+            const intempArr = graphDataChartData['temp'];
+
+            for (let item of resData2) {
+                inhumidArr.push(item.humidity);
+                intempArr.push(item.temperature);
+                xAxisData.push(new Date(item.timestamps).toLocaleString());
+            }
+
+            Highcharts.chart('container', {
+              title: {
+                text: 'New Graph Chart'
+              },
+              tooltip: {
+                useHTML: true,
+                style: {
+                  padding: 0,
+                  pointerEvents: 'auto'
+                },
+                formatter: function () {
+                  return `
+                    Time: ${this.x} <br>${this.series.name}: ${this.y}`
+                }
+              },
+              yAxis: {
+                title: {
+                  text: 'Value'
+                }
+              },
+              xAxis: {
+                categories: xAxisData
+              },
+              legend: {
+                layout: 'vertical',
+                align: 'right',
+                verticalAlign: 'middle'
+              },
+              plotOptions: {
+                series: {
+                  label: {
+                    connectorAllowed: false
+                  }
+                }
+              },
+              series: [{
+                name: 'Humdity',
+                data: inhumidArr
+              }, {
+                name: 'Temperature',
+                data: intempArr
+              }]
+            });
+          } catch (error) {
+            console.log(error)
+          }
+        }
+      }
+      x.onerror = function () {
+
+      }
+      x.send(null);
+
+    }
+
+  </script>
+</body>
+
+</html>
