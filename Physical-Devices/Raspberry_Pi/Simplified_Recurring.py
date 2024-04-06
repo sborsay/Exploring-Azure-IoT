@@ -3,7 +3,7 @@
 import random  
 import time
 from azure.iot.device import IoTHubDeviceClient, Message  
-CONNECTION_STRING = "<Your-Primary-Connection-String-Here>"  
+CONNECTION_STRING = "<Your-Devices-Primary-Connection-String-Here>"  
 MSG_SND = '{{"temperature": {temperature},"humidity": {humidity}, "timestamp": {timestamp}}}'  
 while True:
     
