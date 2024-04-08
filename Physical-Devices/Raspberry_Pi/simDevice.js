@@ -1,5 +1,6 @@
 // Copyright (c) Microsoft. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
+// Modified by Stephen Borsay for Exploring-Azure-IoT Course on Udemy
 //setup:  https://github.com/Azure/azure-iot-sdk-node/blob/main/device/core/readme.md
 //Simple device simulator  example: https://github.com/Azure-Samples/azure-iot-samples-node/blob/master/iot-hub/Quickstarts/simulated-device/SimulatedDevice.js
 //Full device simulator example:  https://github.com/Azure/azure-iot-sdk-node/blob/main/device/samples/javascript/simple_sample_device.js
@@ -19,10 +20,10 @@
 //
 // Using the Azure CLI:
 // az iot hub device-identity show-connection-string --hub-name {YourIoTHubName} --device-id MyNodeDevice --output table
-var connectionString = 'HostName=iothubsdb1.azure-devices.net;DeviceId=testdevice;SharedAccessKey=Sg2kG5as7ZRU1u4lHRqL1/dX1ntLKdP8JPxirWwOzr4=';
+var connectionString = '<Your-Primary-Device-Connection -String-Here>';
 
 // Using the Node.js Device SDK for IoT Hub:
-//   https://github.com/Azure/azure-iot-sdk-node
+// https://github.com/Azure/azure-iot-sdk-node
 // The sample connects to a device-specific MQTT endpoint on your IoT Hub.
 var Mqtt = require('azure-iot-device-mqtt').Mqtt;
 var DeviceClient = require('azure-iot-device').Client
@@ -39,10 +40,6 @@ setInterval(function(){
     humidity:    Math.round(60 + (Math.random() * 20 * 100)/100),
     timestamp:   Math.floor(Date.now() / 1000)
   }));
-
-  // Add a custom application property to the message.
-  // An IoT hub can filter on these properties without access to the message body.
-  //message.properties.add('temperatureAlert', (temperature > 30) ? 'true' : 'false');
 
   console.log('Sending message: ' + message.getData());
 
