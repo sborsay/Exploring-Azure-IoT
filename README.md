@@ -3,9 +3,9 @@ Connecting Virtual IoT devices to the Azure Cloud
 
 ---
 
-#The Azure Command-Line Interface (CLI)
+# The Azure Command-Line Interface (CLI)
 
-Add: az extension add --name azure-iot
+Add: az extension add --name azure-iot<p>
 Update: az extension update --name azure-iot
 
 
