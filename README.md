@@ -9,7 +9,7 @@ Verify you have successsfully installed the Azure CLI:
 ```
 az --version
 ```
-After you successfully install the Azure CLI, you must have at least v2.46.0 for the latest versions of azure-iot
+After you successfully install the Azure CLI, you must have at least v2.46.0 for the latest versions of azure-iot.<p>
 
 Add the IoT specific extentions to your Azure CLI:
 ```
