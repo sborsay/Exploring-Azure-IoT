@@ -19,7 +19,7 @@ Update your Azure CLI IoT package:
 ```
 az extension update --name azure-iot
 ```
-Optional: To set Auto-Update (The CLI will regularly check for new versions and prompt the user to upgrade after each command finishes running)
+Optional: To set Auto-Update (The CLI will regularly check for new versions and prompt the user to upgrade after each command)
 ```
 az config set auto-upgrade.enable=yes
 ```
