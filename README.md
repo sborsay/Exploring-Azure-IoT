@@ -9,9 +9,9 @@ Add:
 ```
 az extension add --name azure-iot
 ```
-
+Update:
 ```
-Update: az extension update --name azure-iot
+az extension update --name azure-iot
 ```
 
 
