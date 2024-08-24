@@ -12,10 +12,10 @@ az iot device send-d2c-message -n <YOUR-IOT-HUB-NAME> -d <YOUR-IOT-DEVICE-NAME> 
 
 ### Simulate a device
 ```
-az iot device simulate --device-id testdevice --login "HostName=iothubsdb1.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=CymzMGwDlpdhAtZokKkEz5X8OAKzdPlhM9EuVLEyfME="
+az iot device simulate --device-id <YOUR-IOT-DEVICE-NAME> --login "HostName=<YOUR-IOT-HUB-NAME>.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=CybgMGwDlpdhAtZrt56OAKzdPlhM67hLEyfME="
 ```
 
 ### Simulate using a template
 ```
-az iot device send-d2c-message -n iothubsdb1 -d testdevice --model-id 'dtmi:com:example:temperaturecontroller;1'
+az iot device send-d2c-message -n <YOUR-IOT-HUB-NAME> -d <YOUR-IOT-DEVICE-NAME> --model-id 'dtmi:com:example:temperaturecontroller;1'
 ```
