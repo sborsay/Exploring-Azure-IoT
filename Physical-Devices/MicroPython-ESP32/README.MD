@@ -10,3 +10,9 @@ az iot hub device-identity connection-string show --hub-name <YOUR-IOT-HUB-NAME>
 
 az iot hub generate-sas-token -n <YOUR-IOT-HUB-NAME> -d <YOUR-IOT-DEVICE-NAME> --du 999999
 ```
+
+## Monitor transmissions from your IoT device to Azure
+```
+
+az iot hub monitor-events --hub-name <YOUR-IOT-HUB-NAME> --device-id <YOUR-IOT-DEVICE-NAME>
+```
