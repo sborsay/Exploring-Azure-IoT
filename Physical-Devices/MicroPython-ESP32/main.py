@@ -12,6 +12,7 @@ import random
 print("Connecting to WiFi", end="")
 sta_if = network.WLAN(network.STA_IF)
 sta_if.active(True)
+# Enter Your WiFI credentials below - WiFI Network name, Password
 sta_if.connect('Detox', 'burger888')
 while not sta_if.isconnected():
   print(".", end="")
@@ -32,10 +33,10 @@ def create_mqtt_client(client_id, hostname, username, password, port=8883, keepa
     return c
 
 def get_telemetry_topic(device_id):
-    return get_topic_base(device_id) + "/messages/events/"
+    return get_topic_base(device_id) + "/messages/events/"   # Standard outgoing Message Topic - publsihed from device
     
 def get_c2d_topic(device_id):
-     return get_topic_base(device_id) + "/messages/devicebound/#"
+     return get_topic_base(device_id) + "/messages/devicebound/#"  #Standard incoming Message Topic - subscribed to on device
 
 def get_topic_base(device_id, module_id=None):
     if module_id:
@@ -61,7 +62,8 @@ MODULE_ID = "ModuleId"
 GATEWAY_HOST_NAME = "GatewayHostName"
 
 ## Parse the connection string into constituent parts
-dict_keys = parse_connection("<Insert-Your-Connection-String-Here>")
+## az iot hub device-identity connection-string show --hub-name <YOUR-IOT-HUB-NAME> --device-id <YOUR-IOT-DEVICE-NAME>
+dict_keys = parse_connection("HostName=iothubsdb1.azure-devices.net;DeviceId=testdevice;SharedAccessKey=Sg2kG5as7ZRU1u4lHRqL1/dX1ntLKdP8JPxirWwOzr4=")
 shared_access_key = dict_keys.get(SHARED_ACCESS_KEY)
 shared_access_key_name =  dict_keys.get(SHARED_ACCESS_KEY_NAME)
 gateway_hostname = dict_keys.get(GATEWAY_HOST_NAME)
@@ -71,7 +73,8 @@ module_id = dict_keys.get(MODULE_ID)
 
 ## Create you own shared access signature from the connection string that you have
 ## Azure IoT Explorer can be used for this purpose.
-sas_token_str = "<Insert-Your-SAS-String-Here>"
+## az iot hub generate-sas-token -n <YOUR-IOT-HUB-NAME> -d <YOUR-IOT-DEVICE-NAME> --du 999999
+sas_token_str = "SharedAccessSignature sr=iothubsdb1.azure-devices.net%2Fdevices%2Ftestdevice&sig=JFagdnaILBXECJuCOIIaXX0OfS80K7fiCmJGhO0%2BMYo%3D&se=1725619961"
 
 ## Create username following the below format '<HOSTNAME>/<DEVICE_ID>'
 username = hostname + '/' + device_id
@@ -90,7 +93,6 @@ subscribe_topic = get_c2d_topic(device_id)
 mqtt_client.set_callback(callback_handler)
 mqtt_client.subscribe(topic=subscribe_topic)
 
-print("Publishing")
 topic = get_telemetry_topic(device_id)
 
 #---------------------------------------
@@ -102,7 +104,7 @@ while True: #loop forever
                 humid = random.randint(0, 100)
                 deviceTime = time.time()
                 print("Publishing")
-                message="{\"temperature\": %d,\"humidity\": %d,\"timestamps\": %d}"%(temp,humid,deviceTime)
+                message="{\"temperature\": %d,\"humidity\": %d,\"timestamp\": %d}"%(temp,humid,deviceTime)
                 mqtt_client.publish(topic=topic, msg=message)
                 print("published payload")
                 time.sleep(5)  #A 5 second delay between publishing, adjust as you like
