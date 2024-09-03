@@ -1,4 +1,4 @@
-## Monitor incoming IoT data from a device
+## Monitor incoming IoT data from a device to Azure
 ```
 az iot hub monitor-events --hub-name <YOUR-IOT-HUB-NAME> --device-id <YOUR-IOT-DEVICE-NAME>
 ```
