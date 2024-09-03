@@ -13,7 +13,7 @@ print("Connecting to WiFi", end="")
 sta_if = network.WLAN(network.STA_IF)
 sta_if.active(True)
 # Enter Your WiFI credentials below - WiFI Network name, Password
-sta_if.connect('Detox', 'burger888')
+sta_if.connect('<YOUR-WIFI-NETWORk-NAME>', '<YOUR-WIFI-NETWORK-PASSWORD>')
 while not sta_if.isconnected():
   print(".", end="")
   time.sleep(0.25)
@@ -63,7 +63,8 @@ GATEWAY_HOST_NAME = "GatewayHostName"
 
 ## Parse the connection string into constituent parts
 ## az iot hub device-identity connection-string show --hub-name <YOUR-IOT-HUB-NAME> --device-id <YOUR-IOT-DEVICE-NAME>
-dict_keys = parse_connection("HostName=iothubsdb1.azure-devices.net;DeviceId=testdevice;SharedAccessKey=Sg2kG5as7ZRU1u4lHRqL1/dX1ntLKdP8JPxirWwOzr4=")
+dict_keys = parse_connection("<Insert-Your-Primary-Connection-String-Here>")
+## Example: "HostName=iothubsdb1.azure-devices.net;DeviceId=testdevice;SharedAccessKey=Sg2kG5je88QU1u4KJHqL1/dX1ntKdg645irWwOzr4=")
 shared_access_key = dict_keys.get(SHARED_ACCESS_KEY)
 shared_access_key_name =  dict_keys.get(SHARED_ACCESS_KEY_NAME)
 gateway_hostname = dict_keys.get(GATEWAY_HOST_NAME)
@@ -74,7 +75,8 @@ module_id = dict_keys.get(MODULE_ID)
 ## Create you own shared access signature from the connection string that you have
 ## Azure IoT Explorer can be used for this purpose.
 ## az iot hub generate-sas-token -n <YOUR-IOT-HUB-NAME> -d <YOUR-IOT-DEVICE-NAME> --du 999999
-sas_token_str = "SharedAccessSignature sr=iothubsdb1.azure-devices.net%2Fdevices%2Ftestdevice&sig=JFagdnaILBXECJuCOIIaXX0OfS80K7fiCmJGhO0%2BMYo%3D&se=1725619961"
+sas_token_str = "<Insert-Your-SAS-Token-String-Here>"
+## Example: "SharedAccessSignature sr=iothubsdb1.azure-devices.net%2Fdevices%2Ftestdevice&sig=JFagdnaILBX72HQewsXX0OfS80K7fiC5gwO0%2BMYo%3D&se=1725619961"
 
 ## Create username following the below format '<HOSTNAME>/<DEVICE_ID>'
 username = hostname + '/' + device_id
